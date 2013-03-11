@@ -1,0 +1,18 @@
+" 幅180文字分
+set columns=180
+
+" 常にタブを表示
+set showtabline=2
+
+set imdisable
+
+" カラー設定
+"colorscheme camo
+"colorscheme molokai
+colorscheme railscasts
+"colorscheme zenburn
+"colorscheme twilight
+"colorscheme hybrid
+"colorscheme jellybeans
+"colorscheme leap
+
