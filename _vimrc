@@ -11,6 +11,7 @@ if has('gui_running')
 	
 	NeoBundle 'git://github.com/Shougo/unite.vim.git'
 	NeoBundle 'git://github.com/ujihisa/unite-colorscheme.git'
+	NeoBundle 'git://github.com/sgur/unite-qf.git'
 
 	NeoBundle 'git://github.com/Shougo/neocomplcache.git'
 	NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
@@ -21,11 +22,12 @@ if has('gui_running')
 	NeoBundle 'git://github.com/thinca/vim-qfreplace.git'
 	NeoBundle 'git://github.com/pangloss/vim-javascript.git'
 	NeoBundle 'git://github.com/jelera/vim-javascript-syntax.git'
-    NeoBundle 'git://github.com/vim-scripts/jshint.vim.git'
+	NeoBundle 'git://github.com/wookiehangover/jshint.vim.git'
 	NeoBundle 'git://github.com/scrooloose/syntastic.git'
 	NeoBundle 'git://github.com/kchmck/vim-coffee-script.git'
 	NeoBundle 'git://github.com/Shougo/vimfiler.git'
 	NeoBundle 'git://github.com/Shougo/vimproc.git'
+	NeoBundle 'git://github.com/thinca/vim-quickrun.git'
 
 	NeoBundle 'git://github.com/jpo/vim-railscasts-theme.git'
 	NeoBundle 'git://github.com/altercation/vim-colors-solarized.git'
@@ -65,6 +67,9 @@ au FileType javascript set ts=2 sw=2 expandtab
 au FileType ruby set ts=2 sw=2 expandtab
 au FileType php set ts=4 sw=4 noexpandtab
 
+" JSHint
+let g:JSHintHighlightErrorLine = 0
+
 " NeoComplCache
 " Use neocomplcache.
 let g:neocomplcache_enable_at_startup = 1
@@ -84,23 +89,8 @@ let g:vimfiler_edit_action = 'tabopen'
 " Don't use preview at QuickFix
 let QFix_PreviewEnable = 0
 
-""" Check with syntastic only javascript sources.
-""let g:syntastic_mode_map = {
-""    'mode': 'passive',
-""  \ 'active_filetypes': ['javascript'],
-""  \ 'passive_filetypes': []
-""}
-" syntastic "{{{
-let g:syntastic_mode_map = { 'mode': 'active',
-            \ 'active_filetypes': ['javascript'],
-            \ 'passive_filetypes': [] }
-" }}}"
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_javascript_checker = 'jshint'
-
-"autocmd FileType javascript :compiler gjslint
-""autocmd QuickfixCmdPost make copen
-autocmd BufWritePost *.coffee silent CoffeeMake! -cb | cwindow | redraw
+" CoffeeScriptの自動コンパイル
+autocmd BufWritePost *.coffee silent CoffeeMake! -cb | cwindow | redraw!
 
 " キーマップ(矢印キー制限)
 "inoremap <BS> <Nop>
@@ -115,24 +105,19 @@ nnoremap <Down> <Nop>
 nnoremap 0 :<C-u>call append(expand('.'), '')<Cr>
 
 " キーマップ設定(NERD_Tree)
-"nmap <silent> <C-e>      :NERDTreeToggle<CR>
-
-" キーマップ設定(NERD_Tree)
 nmap <silent> <C-e> :VimFiler<CR>
 
 " キーマップ設定(Unite)
 nnoremap <silent> ,ub :<C-u>Unite buffer<CR> " Buffer list
 nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file " File list
 nnoremap <silent> ,uc :<C-u>Unite colorscheme -auto-preview<CR>
+nnoremap <silent> ,uq :<C-u>Unite qf<CR>
 
 " キーマップ設定(Unite)
 noremap <C-U><C-B> :Unite buffer<CR> " バッファ一覧
 noremap <C-U><C-F> :UniteWithBufferDir -buffer-name=files file<CR> " ファイル一覧
 
-
 "tabで補完候補の選択を行う
 inoremap <expr><TAB> pumvisible() ? "\<Down>" : "\<TAB>"
 inoremap <expr><S-TAB> pumvisible() ? "\<Up>" : "\<S-TAB>"
 
-" NERDTree 自動実行	
-"autocmd VimEnter * execute 'NERDTree .'
