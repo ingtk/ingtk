@@ -22,12 +22,14 @@ if has('gui_running')
 	NeoBundle 'git://github.com/thinca/vim-qfreplace.git'
 	NeoBundle 'git://github.com/pangloss/vim-javascript.git'
 	NeoBundle 'git://github.com/jelera/vim-javascript-syntax.git'
-	NeoBundle 'git://github.com/wookiehangover/jshint.vim.git'
+"  NeoBundle 'git://github.com/wookiehangover/jshint.vim.git'
+	NeoBundle 'git://github.com/vim-scripts/jshint.vim.git'
 	NeoBundle 'git://github.com/scrooloose/syntastic.git'
 	NeoBundle 'git://github.com/kchmck/vim-coffee-script.git'
 	NeoBundle 'git://github.com/Shougo/vimfiler.git'
 	NeoBundle 'git://github.com/Shougo/vimproc.git'
 	NeoBundle 'git://github.com/thinca/vim-quickrun.git'
+	NeoBundle 'git://github.com/Lokaltog/vim-powerline.git'
 
 	NeoBundle 'git://github.com/jpo/vim-railscasts-theme.git'
 	NeoBundle 'git://github.com/altercation/vim-colors-solarized.git'
@@ -44,6 +46,9 @@ if has('gui_running')
 	filetype plugin on
 endif
 
+" フォント設定
+"set guifont=Ricty\ Regular:h14
+set guifont=Ricty\ Regular\ for\ Powerline:h14
 " 行番号を表示
 set number
 " カレントディレクトリを自動で変更
@@ -68,7 +73,26 @@ au FileType ruby set ts=2 sw=2 expandtab
 au FileType php set ts=4 sw=4 noexpandtab
 
 " JSHint
-let g:JSHintHighlightErrorLine = 0
+"let g:JSHintHighlightErrorLine = 0
+
+" Syntastic
+""let g:syntastic_check_on_open=0 "ファイルを開いたときはチェックしない
+""let g:syntastic_check_on_save=1 "保存時にはチェック
+""let g:syntastic_auto_loc_list=1 "エラーがあったら自動でロケーションリストを開く
+""let g:syntastic_loc_list_height=6 "エラー表示ウィンドウの高さ
+""set statusline+=%#warningmsg# "エラーメッセージの書式
+""set statusline+=%{SyntasticStatuslineFlag()}
+""set statusline+=%*
+""let g:syntastic_javascript_checker = 'jshint' "jshintを使う
+""let g:syntastic_mode_map = {
+""      \ 'mode': 'active',
+""      \ 'active_filetypes': ['ruby', 'javascript'],
+""      \ 'passive_filetypes': []
+""      \ }
+"""エラー表示マークを変更
+""let g:syntastic_enable_signs=1
+""let g:syntastic_error_symbol='✗'
+""let g:syntastic_warning_symbol='⚠'
 
 " NeoComplCache
 " Use neocomplcache.
@@ -82,8 +106,9 @@ let g:neocomplcache_enable_underbar_completion = 1
 " 補完ウィンドウの設定
 set completeopt=menuone
 
+" VimPowerLine
+let g:Powerline_symbols='fancy'
 " VimFiler
-" Edit file by default
 let g:vimfiler_edit_action = 'tabopen'
 
 " Don't use preview at QuickFix
@@ -112,6 +137,7 @@ nnoremap <silent> ,ub :<C-u>Unite buffer<CR> " Buffer list
 nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file " File list
 nnoremap <silent> ,uc :<C-u>Unite colorscheme -auto-preview<CR>
 nnoremap <silent> ,uq :<C-u>Unite qf<CR>
+nnoremap <silent> ,jh :<C-u>JSHint<CR>
 
 " キーマップ設定(Unite)
 noremap <C-U><C-B> :Unite buffer<CR> " バッファ一覧
