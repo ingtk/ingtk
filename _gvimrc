@@ -6,6 +6,11 @@ set showtabline=2
 
 set imdisable
 
+" フォント設定
+""set guifont=Ricty\ Regular:h14
+set guifont=Ricty\ Regular\ for\ Powerline:h14
+""set guifont=Ricty\ Discord\ Regular\ for\ Powerline:h14
+
 " カラー設定
 "colorscheme camo
 "colorscheme molokai

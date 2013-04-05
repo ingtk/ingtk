@@ -46,9 +46,6 @@ if has('gui_running')
 	filetype plugin on
 endif
 
-" フォント設定
-"set guifont=Ricty\ Regular:h14
-set guifont=Ricty\ Regular\ for\ Powerline:h14
 " 行番号を表示
 set number
 " カレントディレクトリを自動で変更
