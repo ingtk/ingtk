@@ -68,6 +68,7 @@ set shiftwidth=4
 au FileType javascript set ts=2 sw=2 expandtab
 au FileType ruby set ts=2 sw=2 expandtab
 au FileType php set ts=4 sw=4 noexpandtab
+au BufRead,BufNewFile *.thor set filetype=ruby
 
 " JSHint
 "let g:JSHintHighlightErrorLine = 0
