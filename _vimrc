@@ -1,49 +1,50 @@
-if has('gui_running')
+set nocompatible
+filetype off
+  
+if has('vim_starting')
+  set runtimepath+=~/.bundle/neobundle.vim
 
-	set nocompatible
-	filetype off
-	  
-	if has('vim_starting')
-	  set runtimepath+=~/.bundle/neobundle.vim
-	
-	  call neobundle#rc(expand('~/.bundle'))
-	endif
-	
-	NeoBundle 'git://github.com/Shougo/unite.vim.git'
-	NeoBundle 'git://github.com/ujihisa/unite-colorscheme.git'
-	NeoBundle 'git://github.com/sgur/unite-qf.git'
+  call neobundle#rc(expand('~/.bundle'))
+endif
 
-	NeoBundle 'git://github.com/Shougo/neocomplcache.git'
-	NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
-	NeoBundle 'git://github.com/vim-scripts/AutoClose.git'
-	NeoBundle 'git://github.com/tpope/vim-surround.git'
-	NeoBundle 'git://github.com/fuenor/qfixgrep.git'
-	NeoBundle 'git://github.com/tpope/vim-rails.git'
-	NeoBundle 'git://github.com/thinca/vim-qfreplace.git'
-	NeoBundle 'git://github.com/pangloss/vim-javascript.git'
-	NeoBundle 'git://github.com/jelera/vim-javascript-syntax.git'
-"  NeoBundle 'git://github.com/wookiehangover/jshint.vim.git'
-	NeoBundle 'git://github.com/vim-scripts/jshint.vim.git'
-	NeoBundle 'git://github.com/scrooloose/syntastic.git'
-	NeoBundle 'git://github.com/kchmck/vim-coffee-script.git'
-	NeoBundle 'git://github.com/Shougo/vimfiler.git'
-	NeoBundle 'git://github.com/Shougo/vimproc.git'
-	NeoBundle 'git://github.com/thinca/vim-quickrun.git'
-	NeoBundle 'git://github.com/Lokaltog/vim-powerline.git'
+NeoBundle 'git://github.com/Shougo/unite.vim.git'
+NeoBundle 'git://github.com/ujihisa/unite-colorscheme.git'
+NeoBundle 'git://github.com/sgur/unite-qf.git'
 
-	NeoBundle 'git://github.com/jpo/vim-railscasts-theme.git'
-	NeoBundle 'git://github.com/altercation/vim-colors-solarized.git'
-	NeoBundle 'git://github.com/matthewtodd/vim-twilight.git'
-	NeoBundle 'git://github.com/tomasr/molokai.git'
-	NeoBundle 'git://github.com/vim-scripts/Zenburn.git'
-	NeoBundle 'git://github.com/yuroyoro/yuroyoro256.vim.git'
-	NeoBundle 'git://github.com/mrkn/mrkn256.vim.git'
-	NeoBundle 'git://github.com/nanotech/jellybeans.vim.git'
-	NeoBundle 'git://github.com/vim-scripts/Colour-Sampler-Pack.git'
-	NeoBundle 'git://github.com/tpope/vim-fugitive.git'
-	NeoBundle 'git://github.com/w0ng/vim-hybrid.git'
-	NeoBundle 'git://github.com/yoos/leap.vim.git'
-	filetype plugin on
+NeoBundle 'git://github.com/Shougo/neocomplcache.git'
+NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
+NeoBundle 'git://github.com/vim-scripts/AutoClose.git'
+NeoBundle 'git://github.com/tpope/vim-surround.git'
+NeoBundle 'git://github.com/fuenor/qfixgrep.git'
+NeoBundle 'git://github.com/tpope/vim-rails.git'
+NeoBundle 'git://github.com/thinca/vim-qfreplace.git'
+NeoBundle 'git://github.com/pangloss/vim-javascript.git'
+NeoBundle 'git://github.com/jelera/vim-javascript-syntax.git'
+"NeoBundle 'git://github.com/wookiehangover/jshint.vim.git'
+NeoBundle 'git://github.com/vim-scripts/jshint.vim.git'
+NeoBundle 'git://github.com/scrooloose/syntastic.git'
+NeoBundle 'git://github.com/kchmck/vim-coffee-script.git'
+NeoBundle 'git://github.com/Shougo/vimfiler.git'
+NeoBundle 'git://github.com/Shougo/vimproc.git'
+NeoBundle 'git://github.com/thinca/vim-quickrun.git'
+NeoBundle 'git://github.com/Lokaltog/vim-powerline.git'
+NeoBundle 'git://github.com/vim-scripts/sudo.vim.git'
+NeoBundle 'git://github.com/tpope/vim-fugitive.git'
+
+NeoBundle 'git://github.com/jpo/vim-railscasts-theme.git'
+NeoBundle 'git://github.com/matthewtodd/vim-twilight.git'
+NeoBundle 'git://github.com/vim-scripts/twilight256.vim.git'
+NeoBundle 'git://github.com/tomasr/molokai.git'
+NeoBundle 'git://github.com/vim-scripts/Zenburn.git'
+NeoBundle 'git://github.com/vim-scripts/Colour-Sampler-Pack.git'
+
+filetype plugin on
+
+if !has('gui_running')
+  set t_Co=256
+  syntax enable
+  set background=dark
+  colorscheme zenburn
 endif
 
 " 行番号を表示
