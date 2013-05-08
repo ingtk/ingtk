@@ -44,7 +44,7 @@ if !has('gui_running')
   set t_Co=256
   syntax enable
   set background=dark
-  colorscheme zenburn
+  colorscheme molokai
 endif
 
 " 行番号を表示
