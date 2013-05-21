@@ -7,36 +7,47 @@ if has('vim_starting')
   call neobundle#rc(expand('~/.bundle'))
 endif
 
+" Plugin
+NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
+
+" Edit
+NeoBundle 'git://github.com/vim-scripts/AutoClose.git'
+NeoBundle 'git://github.com/tpope/vim-surround.git'
+NeoBundle 'git://github.com/Shougo/neocomplcache.git'
+NeoBundle 'git://github.com/Lokaltog/vim-easymotion.git'
+
+" Programming
+NeoBundle 'git://github.com/tpope/vim-rails.git'
+NeoBundle 'git://github.com/pangloss/vim-javascript.git'
+NeoBundle 'git://github.com/jelera/vim-javascript-syntax.git'
+NeoBundle 'git://github.com/kchmck/vim-coffee-script.git'
+NeoBundle 'git://github.com/scrooloose/syntastic.git'
+
+" Git
+NeoBundle 'git://github.com/tpope/vim-fugitive.git'
+
+" Unite
 NeoBundle 'git://github.com/Shougo/unite.vim.git'
 NeoBundle 'git://github.com/ujihisa/unite-colorscheme.git'
 NeoBundle 'git://github.com/sgur/unite-qf.git'
 
-NeoBundle 'git://github.com/Shougo/neocomplcache.git'
-NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
-NeoBundle 'git://github.com/vim-scripts/AutoClose.git'
-NeoBundle 'git://github.com/tpope/vim-surround.git'
-NeoBundle 'git://github.com/fuenor/qfixgrep.git'
-NeoBundle 'git://github.com/tpope/vim-rails.git'
-NeoBundle 'git://github.com/thinca/vim-qfreplace.git'
-NeoBundle 'git://github.com/pangloss/vim-javascript.git'
-NeoBundle 'git://github.com/jelera/vim-javascript-syntax.git'
-"NeoBundle 'git://github.com/wookiehangover/jshint.vim.git'
-NeoBundle 'git://github.com/vim-scripts/jshint.vim.git'
-NeoBundle 'git://github.com/scrooloose/syntastic.git'
-NeoBundle 'git://github.com/kchmck/vim-coffee-script.git'
-NeoBundle 'git://github.com/Shougo/vimfiler.git'
-NeoBundle 'git://github.com/Shougo/vimproc.git'
-NeoBundle 'git://github.com/thinca/vim-quickrun.git'
-NeoBundle 'git://github.com/Lokaltog/vim-powerline.git'
-NeoBundle 'git://github.com/vim-scripts/sudo.vim.git'
-NeoBundle 'git://github.com/tpope/vim-fugitive.git'
-
+" ColorScheme
 NeoBundle 'git://github.com/jpo/vim-railscasts-theme.git'
 NeoBundle 'git://github.com/matthewtodd/vim-twilight.git'
 NeoBundle 'git://github.com/vim-scripts/twilight256.vim.git'
 NeoBundle 'git://github.com/tomasr/molokai.git'
 NeoBundle 'git://github.com/vim-scripts/Zenburn.git'
 NeoBundle 'git://github.com/vim-scripts/Colour-Sampler-Pack.git'
+
+" Other
+NeoBundle 'git://github.com/Shougo/vimfiler.git'
+NeoBundle 'git://github.com/Shougo/vimproc.git'
+NeoBundle 'git://github.com/Lokaltog/vim-powerline.git'
+NeoBundle 'git://github.com/fuenor/qfixgrep.git'
+NeoBundle 'git://github.com/thinca/vim-quickrun.git'
+NeoBundle 'git://github.com/thinca/vim-qfreplace.git'
+NeoBundle 'git://github.com/vim-scripts/sudo.vim.git'
+
 
 filetype plugin on
 
@@ -112,6 +123,17 @@ let g:vimfiler_edit_action = 'tabopen'
 
 " Don't use preview at QuickFix
 let QFix_PreviewEnable = 0
+
+" [EasyMotion]
+" ホームポジションに近いキーを優先
+let g:EasyMotion_keys='hjklasdfgyuiopqwertnmzxcvbHJKLASDFGYUIOPQWERTNMZXCVB'
+" ' + 何かのキーにマッピング
+let g:EasyMotion_leader_key="'"
+" ストローク選択を優先する
+let g:EasyMotion_grouping=1
+" カラー設定を変更
+hi EasyMotionTarget ctermbg=none ctermfg=red
+hi EasyMotionShade  ctermbg=none ctermfg=blue
 
 " CoffeeScriptの自動コンパイル
 autocmd BufWritePost *.coffee silent CoffeeMake! -cb | cwindow | redraw!
