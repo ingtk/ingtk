@@ -41,12 +41,17 @@ NeoBundle 'git://github.com/vim-scripts/Colour-Sampler-Pack.git'
 
 " Other
 NeoBundle 'git://github.com/Shougo/vimfiler.git'
-NeoBundle 'git://github.com/Shougo/vimproc.git'
 NeoBundle 'git://github.com/Lokaltog/vim-powerline.git'
 NeoBundle 'git://github.com/fuenor/qfixgrep.git'
 NeoBundle 'git://github.com/thinca/vim-quickrun.git'
 NeoBundle 'git://github.com/thinca/vim-qfreplace.git'
 NeoBundle 'git://github.com/vim-scripts/sudo.vim.git'
+NeoBundle 'git://github.com/Shougo/vimproc.git', {
+            \ 'build' : {
+            \   'mac' : 'make -f make_mac.mak',
+            \   'unix' : 'make -f make_unix.mak',
+            \   },
+            \ }
 
 
 filetype plugin on
