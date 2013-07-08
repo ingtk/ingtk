@@ -22,6 +22,7 @@ NeoBundle 'git://github.com/pangloss/vim-javascript.git'
 NeoBundle 'git://github.com/jelera/vim-javascript-syntax.git'
 NeoBundle 'git://github.com/kchmck/vim-coffee-script.git'
 NeoBundle 'git://github.com/scrooloose/syntastic.git'
+NeoBundle 't9md/vim-textmanip'
 
 " Git
 NeoBundle 'git://github.com/tpope/vim-fugitive.git'
@@ -168,6 +169,15 @@ nnoremap <silent> ,jh :<C-u>JSHint<CR>
 " キーマップ設定(Unite)
 noremap <C-U><C-B> :Unite buffer<CR> " バッファ一覧
 noremap <C-U><C-F> :UniteWithBufferDir -buffer-name=files file<CR> " ファイル一覧
+
+" キーマップ(textmanip)
+vmap <C-j> <Plug>(textmanip-move-down)
+vmap <C-k> <Plug>(textmanip-move-up)
+vmap <C-h> <Plug>(textmanip-move-left)
+vmap <C-l> <Plug>(textmanip-move-right)
+" 行の複製
+nmap <D-d> <Plug>(textmanip-duplicate-down)
+vmap <D-d> <Plug>(textmanip-duplicate-down)
 
 "tabで補完候補の選択を行う
 inoremap <expr><TAB> pumvisible() ? "\<Down>" : "\<TAB>"
