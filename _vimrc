@@ -15,6 +15,7 @@ NeoBundle 'git://github.com/vim-scripts/AutoClose.git'
 NeoBundle 'git://github.com/tpope/vim-surround.git'
 NeoBundle 'git://github.com/Shougo/neocomplcache.git'
 NeoBundle 'git://github.com/Lokaltog/vim-easymotion.git'
+NeoBundle 'git://github.com/mattn/zencoding-vim.git'
 
 " Programming
 NeoBundle 'git://github.com/tpope/vim-rails.git'
@@ -84,6 +85,7 @@ set tabstop=4
 set shiftwidth=4
 
 au FileType javascript set ts=2 sw=2 expandtab
+au FileType coffee set ts=2 sw=2 expandtab
 au FileType ruby set ts=2 sw=2 expandtab
 au FileType php set ts=4 sw=4 noexpandtab
 au BufRead,BufNewFile *.thor set filetype=ruby
