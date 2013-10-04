@@ -112,6 +112,14 @@ au BufRead,BufNewFile *.thor set filetype=ruby
 ""let g:syntastic_error_symbol='✗'
 ""let g:syntastic_warning_symbol='⚠'
 
+" syntastic
+let g:syntastic_mode_map = { 'mode': 'active',
+  \ 'active_filetypes': ['ruby', 'javascript'],
+  \ 'passive_filetypes': ['html'] }
+let g:syntastic_auto_loc_list = 1
+""let g:syntastic_javascript_checker = 'jshint'
+let g:syntastic_javascript_checker = 'gjslint'
+
 " NeoComplCache
 " Use neocomplcache.
 let g:neocomplcache_enable_at_startup = 1
