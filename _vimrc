@@ -24,6 +24,7 @@ NeoBundle 'git://github.com/jelera/vim-javascript-syntax.git'
 NeoBundle 'git://github.com/kchmck/vim-coffee-script.git'
 NeoBundle 'git://github.com/scrooloose/syntastic.git'
 NeoBundle 't9md/vim-textmanip'
+NeoBundle 'slim-template/vim-slim'
 
 " Git
 NeoBundle 'git://github.com/tpope/vim-fugitive.git'
@@ -86,6 +87,7 @@ set shiftwidth=4
 
 au FileType javascript set ts=2 sw=2 expandtab
 au FileType coffee set ts=2 sw=2 expandtab
+au FileType slim set ts=2 sw=2 expandtab
 au FileType ruby set ts=2 sw=2 expandtab
 au FileType php set ts=4 sw=4 noexpandtab
 au BufRead,BufNewFile *.thor set filetype=ruby
