@@ -15,7 +15,7 @@ NeoBundle 'git://github.com/vim-scripts/AutoClose.git'
 NeoBundle 'git://github.com/tpope/vim-surround.git'
 NeoBundle 'git://github.com/Shougo/neocomplcache.git'
 NeoBundle 'git://github.com/Lokaltog/vim-easymotion.git'
-NeoBundle 'git://github.com/mattn/zencoding-vim.git'
+NeoBundle 'git://github.com/mattn/emmet-vim.git'
 
 " Programming
 NeoBundle 'git://github.com/tpope/vim-rails.git'
