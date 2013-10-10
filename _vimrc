@@ -74,6 +74,8 @@ set autochdir
 set nobackup
 " スワップファイルを作成しない
 set noswapfile
+" 変更のあったファイルを自動で読み込み
+set autoread
 
 " クリップボードを共有する
 set clipboard=unnamed,autoselect
@@ -89,7 +91,9 @@ au FileType javascript set ts=2 sw=2 expandtab
 au FileType coffee set ts=2 sw=2 expandtab
 au FileType slim set ts=2 sw=2 expandtab
 au FileType ruby set ts=2 sw=2 expandtab
+au FileType python set ts=2 sw=2 expandtab
 au FileType php set ts=4 sw=4 noexpandtab
+au FileType html set ts=4 sw=4 noexpandtab
 au BufRead,BufNewFile *.thor set filetype=ruby
 
 " JSHint
@@ -154,7 +158,8 @@ hi EasyMotionTarget ctermbg=none ctermfg=red
 hi EasyMotionShade  ctermbg=none ctermfg=blue
 
 " CoffeeScriptの自動コンパイル
-autocmd BufWritePost *.coffee silent CoffeeMake! -cb | cwindow | redraw!
+"autocmd BufWritePost *.coffee silent make! -cb | cwindow | redraw!
+autocmd BufWritePost *.coffee silent make!
 
 " キーマップ(矢印キー制限)
 "inoremap <BS> <Nop>
