@@ -95,6 +95,7 @@ au FileType python set ts=2 sw=2 expandtab
 au FileType php set ts=4 sw=4 noexpandtab
 au FileType html set ts=4 sw=4 noexpandtab
 au BufRead,BufNewFile *.thor set filetype=ruby
+au BufRead,BufNewFile *.erb set ts=2 sw=2 expandtab
 
 " JSHint
 "let g:JSHintHighlightErrorLine = 0
