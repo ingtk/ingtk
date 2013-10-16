@@ -109,6 +109,7 @@ let g:syntastic_mode_map = { 'mode': 'active',
 let g:syntastic_auto_loc_list = 1
 ""let g:syntastic_javascript_checker = 'jshint'
 let g:syntastic_javascript_checker = 'gjslint'
+let g:syntastic_javascript_gjslint_conf = ' --nojsdoc'
 
 " NeoComplCache
 " Use neocomplcache.
@@ -142,8 +143,8 @@ hi EasyMotionTarget ctermbg=none ctermfg=red
 hi EasyMotionShade  ctermbg=none ctermfg=blue
 
 " CoffeeScriptの自動コンパイル
-"autocmd BufWritePost *.coffee silent make! -cb | cwindow | redraw!
-""autocmd BufWritePost *.coffee silent make!
+"autocmd BufWritePost *.coffee silent make! -cb | cwindow | redraw! " ## old way ##
+"autocmd BufWritePost *.coffee silent make!
 
 " キーマップ(矢印キー制限)
 "inoremap <BS> <Nop>
