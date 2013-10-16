@@ -138,7 +138,7 @@ hi EasyMotionShade  ctermbg=none ctermfg=blue
 
 " CoffeeScriptの自動コンパイル
 "autocmd BufWritePost *.coffee silent make! -cb | cwindow | redraw!
-autocmd BufWritePost *.coffee silent make!
+""autocmd BufWritePost *.coffee silent make!
 
 " キーマップ(矢印キー制限)
 "inoremap <BS> <Nop>
