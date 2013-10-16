@@ -19,12 +19,13 @@ NeoBundle 'git://github.com/mattn/emmet-vim.git'
 
 " Programming
 NeoBundle 'git://github.com/tpope/vim-rails.git'
-NeoBundle 'git://github.com/pangloss/vim-javascript.git'
 NeoBundle 'git://github.com/jelera/vim-javascript-syntax.git'
 NeoBundle 'git://github.com/kchmck/vim-coffee-script.git'
 NeoBundle 'git://github.com/scrooloose/syntastic.git'
 NeoBundle 't9md/vim-textmanip'
 NeoBundle 'slim-template/vim-slim'
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'briancollins/vim-jst'
 
 " Git
 NeoBundle 'git://github.com/tpope/vim-fugitive.git'
@@ -96,6 +97,10 @@ au FileType php set ts=4 sw=4 noexpandtab
 au FileType html set ts=4 sw=4 noexpandtab
 au BufRead,BufNewFile *.thor set filetype=ruby
 au BufRead,BufNewFile *.erb set ts=2 sw=2 expandtab
+au BufRead,BufNewFile *.ejs set filetype=jst
+au BufRead,BufNewFile *.ejs set ts=2 sw=2 expandtab
+au BufRead,BufNewFile *.ejs.* set filetype=jst
+au BufRead,BufNewFile *.ejs.* set ts=2 sw=2 expandtab
 
 " syntastic
 let g:syntastic_mode_map = { 'mode': 'active',
