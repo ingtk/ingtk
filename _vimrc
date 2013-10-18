@@ -109,7 +109,7 @@ let g:syntastic_mode_map = { 'mode': 'active',
 let g:syntastic_auto_loc_list = 1
 ""let g:syntastic_javascript_checker = 'jshint'
 let g:syntastic_javascript_checker = 'gjslint'
-let g:syntastic_javascript_gjslint_conf = ' --nojsdoc'
+let g:syntastic_javascript_gjslint_conf = ' --nojsdoc --max_line_length 200'
 
 " NeoComplCache
 " Use neocomplcache.
