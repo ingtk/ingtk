@@ -168,6 +168,9 @@ nnoremap <silent> ,uc :<C-u>Unite colorscheme -auto-preview<CR>
 nnoremap <silent> ,uq :<C-u>Unite qf<CR>
 nnoremap <silent> ,jh :<C-u>JSHint<CR>
 
+" キーマップ(open .vimrc)
+nnoremap <silent> ,vimrc :tabe ~/.vimrc<CR>
+
 " キーマップ設定(Unite)
 noremap <C-U><C-B> :Unite buffer<CR> " バッファ一覧
 noremap <C-U><C-F> :UniteWithBufferDir -buffer-name=files file<CR> " ファイル一覧
