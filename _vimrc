@@ -7,14 +7,13 @@ if has('vim_starting')
   call neobundle#rc(expand('~/.bundle'))
 endif
 
-" Plugin
+" Plugin Control
 NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
 
 " Edit
 NeoBundle 'git://github.com/vim-scripts/AutoClose.git'
 NeoBundle 'git://github.com/tpope/vim-surround.git'
 NeoBundle 'git://github.com/Shougo/neocomplcache.git'
-NeoBundle 'git://github.com/Lokaltog/vim-easymotion.git'
 NeoBundle 'git://github.com/mattn/emmet-vim.git'
 
 " Programming
@@ -43,9 +42,10 @@ NeoBundle 'git://github.com/tomasr/molokai.git'
 NeoBundle 'git://github.com/vim-scripts/Zenburn.git'
 NeoBundle 'git://github.com/vim-scripts/Colour-Sampler-Pack.git'
 
-" Other
+" Utility
 NeoBundle 'git://github.com/Shougo/vimfiler.git'
 NeoBundle 'git://github.com/Lokaltog/vim-powerline.git'
+NeoBundle 'git://github.com/rhysd/clever-f.vim.git'
 NeoBundle 'git://github.com/fuenor/qfixgrep.git'
 NeoBundle 'git://github.com/thinca/vim-quickrun.git'
 NeoBundle 'git://github.com/thinca/vim-qfreplace.git'
@@ -88,15 +88,17 @@ set tabstop=4
 " タブを挿入するときの幅
 set shiftwidth=4
 
-au FileType javascript set ts=2 sw=2 expandtab
 au FileType coffee set ts=2 sw=2 expandtab
 au FileType slim set ts=2 sw=2 expandtab
-au FileType ruby set ts=2 sw=2 expandtab
 au FileType python set ts=2 sw=2 expandtab
 au FileType php set ts=4 sw=4 noexpandtab
 au FileType html set ts=4 sw=4 noexpandtab
+
+au FileType ruby set ts=2 sw=2 expandtab
 au BufRead,BufNewFile *.thor set filetype=ruby
 au BufRead,BufNewFile *.erb set ts=2 sw=2 expandtab
+
+au FileType javascript set ts=2 sw=2 expandtab
 au BufRead,BufNewFile *.ejs set filetype=jst
 au BufRead,BufNewFile *.ejs set ts=2 sw=2 expandtab
 au BufRead,BufNewFile *.ejs.* set filetype=jst
@@ -107,9 +109,10 @@ let g:syntastic_mode_map = { 'mode': 'active',
   \ 'active_filetypes': ['ruby', 'javascript'],
   \ 'passive_filetypes': ['html'] }
 let g:syntastic_auto_loc_list = 1
-""let g:syntastic_javascript_checker = 'jshint'
-let g:syntastic_javascript_checker = 'gjslint'
-let g:syntastic_javascript_gjslint_conf = ' --nojsdoc --max_line_length 200'
+let g:syntastic_javascript_checker = 'jshint'
+let g:syntastic_javascript_jshint_conf = '~/.jshintrc'
+""let g:syntastic_javascript_checker = 'gjslint'
+""let g:syntastic_javascript_gjslint_conf = ' --nojsdoc --max_line_length 200'
 
 " NeoComplCache
 " Use neocomplcache.
@@ -131,16 +134,9 @@ let g:vimfiler_edit_action = 'tabopen'
 " Don't use preview at QuickFix
 let QFix_PreviewEnable = 0
 
-" [EasyMotion]
-" ホームポジションに近いキーを優先
-let g:EasyMotion_keys='hjklasdfgyuiopqwertnmzxcvbHJKLASDFGYUIOPQWERTNMZXCVB'
-" ' + 何かのキーにマッピング
-let g:EasyMotion_leader_key="'"
-" ストローク選択を優先する
-let g:EasyMotion_grouping=1
-" カラー設定を変更
-hi EasyMotionTarget ctermbg=none ctermfg=red
-hi EasyMotionShade  ctermbg=none ctermfg=blue
+" Clever-f
+let g:clever_f_fix_key_direction = 1
+let g:clever_f_smart_case = 1
 
 " CoffeeScriptの自動コンパイル
 "autocmd BufWritePost *.coffee silent make! -cb | cwindow | redraw! " ## old way ##
@@ -170,6 +166,9 @@ nnoremap <silent> ,jh :<C-u>JSHint<CR>
 
 " キーマップ(open .vimrc)
 nnoremap <silent> ,vimrc :tabe ~/.vimrc<CR>
+nnoremap <silent> ,gvimrc :tabe ~/.gvimrc<CR>
+nnoremap <silent> ,svimrc :source ~/.vimrc<CR>
+nnoremap <silent> ,sgvimrc :source ~/.vimrc<CR>
 
 " キーマップ設定(Unite)
 noremap <C-U><C-B> :Unite buffer<CR> " バッファ一覧
