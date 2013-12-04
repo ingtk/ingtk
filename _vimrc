@@ -16,6 +16,7 @@ NeoBundle 'git://github.com/tpope/vim-surround.git'
 NeoBundle 'git://github.com/Shougo/neocomplcache.git'
 NeoBundle 'git://github.com/mattn/emmet-vim.git'
 NeoBundle 'osyo-manga/vim-over'
+NeoBundle 'git://github.com/editorconfig/editorconfig-vim.git'
 
 " Programming
 NeoBundle 'git://github.com/tpope/vim-rails.git'
@@ -65,7 +66,7 @@ if !has('gui_running')
   set t_Co=256
   syntax enable
   set background=dark
-  colorscheme molokai
+  colorscheme twilight256 
 endif
 
 " 行番号を表示
@@ -110,7 +111,8 @@ let g:syntastic_mode_map = { 'mode': 'active',
   \ 'active_filetypes': ['ruby', 'javascript'],
   \ 'passive_filetypes': ['html'] }
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_javascript_checker = 'jshint'
+let g:syntastic_javascript_checkers = ['jshint']
+""let g:syntastic_javascript_checker = 'jshint'
 let g:syntastic_javascript_jshint_conf = '~/.jshintrc'
 ""let g:syntastic_javascript_checker = 'gjslint'
 ""let g:syntastic_javascript_gjslint_conf = ' --nojsdoc --max_line_length 200'
@@ -165,11 +167,13 @@ nnoremap <silent> ,uc :<C-u>Unite colorscheme -auto-preview<CR>
 nnoremap <silent> ,uq :<C-u>Unite qf<CR>
 nnoremap <silent> ,jh :<C-u>JSHint<CR>
 
+" キーマップ設定(vim-over)
+nnoremap <silent> ,m :OverCommandLine<CR>%s/
+
 " キーマップ(open .vimrc)
 nnoremap <silent> ,vimrc :tabe ~/.vimrc<CR>
 nnoremap <silent> ,gvimrc :tabe ~/.gvimrc<CR>
-nnoremap <silent> ,svimrc :source ~/.vimrc<CR>
-nnoremap <silent> ,sgvimrc :source ~/.vimrc<CR>
+nnoremap <silent> ,src :source ~/.vimrc<CR>:source ~/.gvimrc<CR>
 
 " キーマップ設定(Unite)
 noremap <C-U><C-B> :Unite buffer<CR> " バッファ一覧
