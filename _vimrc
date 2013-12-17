@@ -132,7 +132,8 @@ set completeopt=menuone
 " VimPowerLine
 let g:Powerline_symbols='fancy'
 " VimFiler
-let g:vimfiler_edit_action = 'tabopen'
+"let g:vimfiler_edit_action = 'tabopen'
+let g:vimfiler_edit_action = 'tabdrop'
 
 " Don't use preview at QuickFix
 let QFix_PreviewEnable = 0
