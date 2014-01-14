@@ -81,9 +81,9 @@ set clipboard=unnamed,autoselect
 " タブ入力を半角スペースに変換
 set expandtab
 " タブを表示するときの幅
-set tabstop=4
+set tabstop=2
 " タブを挿入するときの幅
-set shiftwidth=4
+set shiftwidth=2
 
 au FileType coffee set ts=2 sw=2 expandtab
 au FileType slim set ts=2 sw=2 expandtab
