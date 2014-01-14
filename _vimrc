@@ -150,7 +150,7 @@ nnoremap <Up> <Nop>
 nnoremap <Down> <Nop>
 nnoremap 0 :<C-u>call append(expand('.'), '')<Cr>
 
-" キーマップ設定(NERD_Tree)
+" キーマップ設定(VimFiler)
 nmap <silent> <C-e> :VimFiler<CR>
 
 " キーマップ設定(Unite)
@@ -158,7 +158,6 @@ nnoremap <silent> ,ub :<C-u>Unite buffer<CR> " Buffer list
 nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file " File list
 nnoremap <silent> ,uc :<C-u>Unite colorscheme -auto-preview<CR>
 nnoremap <silent> ,uq :<C-u>Unite qf<CR>
-nnoremap <silent> ,jh :<C-u>JSHint<CR>
 
 " キーマップ設定(vim-over)
 nnoremap <silent> ,m :OverCommandLine<CR>%s/
@@ -166,7 +165,7 @@ nnoremap <silent> ,m :OverCommandLine<CR>%s/
 " キーマップ(open .vimrc)
 nnoremap <silent> ,vimrc :tabe ~/.vimrc<CR>
 nnoremap <silent> ,gvimrc :tabe ~/.gvimrc<CR>
-nnoremap <silent> ,src :source ~/.vimrc<CR>:source ~/.gvimrc<CR>
+nnoremap <silent> ,so :source ~/.vimrc<CR>:source ~/.gvimrc<CR>
 
 " キーマップ設定(Unite)
 noremap <C-U><C-B> :Unite buffer<CR> " バッファ一覧
