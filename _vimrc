@@ -60,13 +60,14 @@ NeoBundle 'git://github.com/Shougo/vimproc.git', {
             \ }
 
 
+
 filetype plugin on
 
 if !has('gui_running')
   set t_Co=256
   syntax enable
   set background=dark
-  colorscheme twilight256 
+  colorscheme base16-railscasts 
 endif
 
 " 行番号を表示
