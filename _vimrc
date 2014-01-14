@@ -33,16 +33,10 @@ NeoBundle 'git://github.com/tpope/vim-fugitive.git'
 
 " Unite
 NeoBundle 'git://github.com/Shougo/unite.vim.git'
-NeoBundle 'git://github.com/ujihisa/unite-colorscheme.git'
 NeoBundle 'git://github.com/sgur/unite-qf.git'
 
 " ColorScheme
 NeoBundle 'git://github.com/jpo/vim-railscasts-theme.git'
-NeoBundle 'git://github.com/matthewtodd/vim-twilight.git'
-NeoBundle 'git://github.com/vim-scripts/twilight256.vim.git'
-NeoBundle 'git://github.com/tomasr/molokai.git'
-NeoBundle 'git://github.com/vim-scripts/Zenburn.git'
-NeoBundle 'git://github.com/vim-scripts/Colour-Sampler-Pack.git'
 
 " Utility
 NeoBundle 'git://github.com/Shougo/vimfiler.git'
