@@ -2,9 +2,9 @@ set nocompatible
 filetype off
   
 if has('vim_starting')
-  set runtimepath+=~/.bundle/neobundle.vim
+  set runtimepath+=$HOME/.bundle/neobundle.vim
 
-  call neobundle#rc(expand('~/.bundle'))
+  call neobundle#rc(expand('$HOME/.bundle'))
 endif
 
 " Plugin Control
@@ -113,10 +113,7 @@ let g:syntastic_mode_map = { 'mode': 'active',
   \ 'passive_filetypes': ['html'] }
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_javascript_checkers = ['jshint']
-""let g:syntastic_javascript_checker = 'jshint'
-let g:syntastic_javascript_jshint_conf = '~/.jshintrc'
-""let g:syntastic_javascript_checker = 'gjslint'
-""let g:syntastic_javascript_gjslint_conf = ' --nojsdoc --max_line_length 200'
+let g:syntastic_javascript_jshint_conf = '$HOME/.jshintrc'
 
 " NeoComplCache
 " Use neocomplcache.
