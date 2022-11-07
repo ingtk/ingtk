@@ -1,0 +1,58 @@
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+source $(brew --prefix)/share/zsh-abbr/zsh-abbr.zsh
+
+# hooks
+eval "$(anyenv init -)"
+eval "$(direnv hook zsh)"
+eval "$(starship init zsh)"
+
+# environment
+export GOPATH=$HOME/go
+export PATH="$HOME/.anyenv/bin:$PATH"
+export PATH="$HOME/go/bin/:$PATH"
+export HISTSIZE=1000
+export SAVEHIST=100000
+
+## for libpq
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/libpq/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/libpq/include"
+
+## for openssl
+export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/openssl@3/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/openssl@3/include"    
+
+## for volta
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
+## for perl
+eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
+    
+# alias
+alias ls='exa'
+alias cat='bat'
+alias vim='nvim'
+
+abbr -S ll='ls -l'
+abbr -S lla='ls -la'
+abbr -S cdr='cd $(ghq root)/$(ghq list | peco)'
+abbr -S gco='git checkout'
+abbr -S pull='git pull origin $(git symbolic-ref --short HEAD)'
+abbr -S push='git push origin $(git symbolic-ref --short HEAD)'
+abbr -S tigs='tig status'
+abbr -S zshrc='vim ~/.zshrc'
+abbr -S szshrc='source ~/.zshrc'
+
+
+# The next line updates PATH for the Google Cloud SDK.
+source $HOME/google-cloud-sdk/path.zsh.inc
+# The next line enables shell command completion for gcloud.
+source $HOME/google-cloud-sdk/completion.zsh.inc
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
