@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+    links:
+      - db
+    command:
+      - go
+      - run
+      - main.go
+  db:
+    image: postgres:11
+    environment:
+      PGDATA: /var/lib/postgresql/data/pgdata
+      POSTGRES_DB: testdb
+      POSTGRES_USER: testu
+      POSTGRES_PASSWORD: testpw
+    volumes:
+      - ./sql:/docker-entrypoint-initdb.d
+    ports:
+      - 9998:5432
