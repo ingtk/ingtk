@@ -1,0 +1,4 @@
+CREATE TABLE IF NOT EXISTS teams (
+    id BIGSERIAL PRIMARY KEY,
+    name VARCHAR(100)
+);
